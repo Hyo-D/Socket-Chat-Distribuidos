@@ -8,8 +8,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ChatServer {
 
     private static final int PORT = 12345;
-    // Usamos un ConcurrentHashMap para mapear el PrintWriter de cada cliente a su color y nombre.
-    // Esto es más seguro para la concurrencia que un HashSet simple para writers si necesitamos más datos.
     private static ConcurrentHashMap<PrintWriter, ClientInfo> clientMap = new ConcurrentHashMap<>();
 
     // Clase interna para almacenar información del cliente
@@ -50,11 +48,12 @@ public class ChatServer {
     // Método para generar un color hexadecimal aleatorio
     private static String getRandomHexColor() {
         Random rand = new Random();
-        // Generar colores que sean lo suficientemente brillantes para ser visibles en un fondo blanco/claro
-        // Evitar colores muy oscuros
-        int r = 100 + rand.nextInt(156); // 100-255
-        int g = 100 + rand.nextInt(156); // 100-255
-        int b = 100 + rand.nextInt(156); // 100-255
+
+        int r = rand.nextInt(151) + 50; // Rango de 50 a 200
+        int g = rand.nextInt(151) + 50; // Rango de 50 a 200
+        int b = rand.nextInt(151) + 50; // Rango de 50 a 200
+
+        // Convertir los valores RGB a formato hexadecimal
         return String.format("#%02x%02x%02x", r, g, b);
     }
 
