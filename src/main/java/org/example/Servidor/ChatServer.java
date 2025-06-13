@@ -35,8 +35,8 @@ public class ChatServer {
         }
     }
 
-    // Método para enviar un mensaje a todos los clientes conectados
-    // Ahora incluye el color del remitente
+    // Metodo para enviar un mensaje a todos los clientes conectados
+
     public static void broadcastMessage(String senderName, String senderColorHex, String message) {
         // El formato del mensaje será: "COLORHEX|NOMBRE: MENSAJE"
         String formattedMessage = senderColorHex + "|" + senderName + ": " + message;
@@ -45,7 +45,7 @@ public class ChatServer {
         }
     }
 
-    // Método para generar un color hexadecimal aleatorio
+    // Metodo para generar un color hexadecimal aleatorio
     private static String getRandomHexColor() {
         Random rand = new Random();
 
@@ -83,7 +83,7 @@ public class ChatServer {
                     clientName = "Anónimo-" + UUID.randomUUID().toString().substring(0, 4);
                 }
 
-                writer.println("¡Bienvenido, " + clientName + "! Tu color asignado es " + clientColorHex + ".");
+                writer.println("¡Bienvenido, " + clientName + "!");
                 System.out.println("Cliente '" + clientName + "' conectado con color " + clientColorHex + ".");
 
                 // Añadir el writer del cliente y su info al mapa global
