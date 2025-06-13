@@ -20,7 +20,7 @@ public class ChatClientGUI extends JFrame {
     private JTextPane messageArea;
     private JTextField messageField;
     private JButton sendButton;
-    private JButton reconnectButton; // <--- ¡NUEVO BOTÓN!
+    private JButton reconnectButton;
     private Socket socket;
     private PrintWriter writer;
     private BufferedReader reader;
