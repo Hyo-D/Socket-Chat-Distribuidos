@@ -26,7 +26,7 @@ public class ChatClientGUI extends JFrame {
 
     private StyledDocument doc;
     private SimpleAttributeSet defaultStyle;
-    private SimpleAttributeSet nameStyle; // Este estilo ahora también incluirá negrita
+    private SimpleAttributeSet nameStyle;
 
     public ChatClientGUI() {
         super("Cliente de Chat");
@@ -52,7 +52,7 @@ public class ChatClientGUI extends JFrame {
 
         // --- Configuración del estilo para el nombre (ahora con negrita) ---
         nameStyle = new SimpleAttributeSet();
-        StyleConstants.setBold(nameStyle, true); // <--- ¡NUEVA LÍNEA CLAVE PARA LA NEGRITA!
+        StyleConstants.setBold(nameStyle, true);
         // El color se establecerá dinámicamente al procesar el mensaje,
         // pero la propiedad de negrita ya está definida aquí.
 
